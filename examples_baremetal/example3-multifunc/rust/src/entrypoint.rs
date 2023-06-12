@@ -5,7 +5,7 @@ use solana_program::{
 
 // Declare and export the program's entrypoint
 // TODO set the correct entrypoint
-entrypoint!();
+entrypoint!(process_instruction);
 
 // Program entrypoint's implementation
 pub fn process_instruction(
@@ -17,4 +17,5 @@ pub fn process_instruction(
     // use processor function
     // TODO call the correct function in Processor, passing the arguments from this function
    //  return Processor::
+   return Processor::process_program_call(program_id, accounts, instruction_data)
 }
